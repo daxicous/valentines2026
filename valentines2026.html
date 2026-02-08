@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I love you Lisa</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body, html {
+        width: 100%;
+        height: 100%;
+    }
+
+    .screen {
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        background-size: auto;
+        background-repeat: repeat;
+        background-position: top left;
+        color: #fff;
+        padding: 50px;
+    }
+
+    .active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-block {
+        background: rgba(255, 192, 203, 0.85);
+        padding: 40px 60px; /* BIGGER */
+        border-radius: 25px;
+        text-align: center;
+        margin-bottom: 35px;
+        font-size: 1.8rem; /* BIGGER TEXT */
+        color: #000;
+        line-height: 1.4;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+    }
+
+    button {
+        padding: 20px 40px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: transform 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .yes-button {
+        background-color: #ff69b4;
+        color: white;
+    }
+
+    .no-button {
+        background-color: #fff;
+        color: #ff69b4;
+        border: 2px solid #ff69b4;
+    }
+
+    .screen2-text {
+        background: rgba(255, 182, 193, 0.8);
+        padding: 30px 50px;
+        border-radius: 20px;
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
+        color: #000;
+    }
+
+    .try-button {
+        background-color: #ff69b4;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 20px;
+        font-size: 1rem;
+        border: none;
+    }
+
+    /* Screen 3 */
+    .screen3 {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 8%;
+    }
+
+    .screen3 .text-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%; /* BIGGER */
+        margin-right: 4%;
+    }
+
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 25px;
+        width: 100%;
+    }
+
+    .video-container video {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .image-container {
+        display: flex;
+        gap: 20px;        /* gap between two columns */
+        width: 40%;       /* wider container for two columns */
+        margin-left: auto;
+    }
+
+    .image-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;       /* vertical spacing */
+        width: 50%;      /* each column takes half the container */
+    }
+
+    .image-column img {
+        width: 100%;     /* fill column */
+        border-radius: 15px;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Screen 1 -->
+<div id="screen1" class="screen active" style="background-image: url('background.jpg');">
+    <div class="text-block">
+        Lisa. Are you willing to retry and continue our relationship? We can go slow, but first I need to ask: will you be my valentine?
+    </div>
+    <div class="buttons">
+        <button class="yes-button" onclick="goToScreen('screen3')">Yes of course</button>
+        <button class="no-button" onclick="goToScreen('screen2')">No</button>
+    </div>
+</div>
+
+<!-- Screen 2 -->
+<div id="screen2" class="screen" style="background-image: url('background.jpg');">
+    <div class="screen2-text">
+        It's okay. Take your time, but I hope you'll reconsider.
+    </div>
+    <button class="try-button" onclick="goToScreen('screen1')">Try Again</button>
+</div>
+
+<!-- Screen 3 -->
+<div id="screen3" class="screen screen3" style="background-image: url('background.jpg');">
+    <div class="text-container">
+        <div class="text-block">
+            Lisa i lvoe you so much, all i want to do is make you happy.
+            Please let me continue to be in your life.
+            Ill be patient and love you with all of my heart.
+        </div>
+        <div class="video-container">
+            <video src="vid_1.mov" autoplay loop muted></video>
+            <video src="vid_2.mov" autoplay loop muted></video>
+            <video src="vid_3.mov" autoplay loop muted></video>
+        </div>
+    </div>
+    <div class="image-container">
+        <div class="image-column">
+            <img src="lisa_1.jpg">
+            <img src="lisa_2.jpg">
+            <img src="lisa_3.jpg">
+            <img src="lisa_4.jpg">
+        </div>
+        <div class="image-column">
+            <img src="lisa_5.jpg">
+            <img src="lisa_6.jpg">
+            <img src="lisa_7.jpg">
+            <img src="lisa_8.jpg">
+        </div>
+    </div>
+</div>
+
+<script>
+    function goToScreen(screenId) {
+        document.querySelectorAll('.screen').forEach(screen => {
+            screen.classList.remove('active');
+        });
+        document.getElementById(screenId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
+
