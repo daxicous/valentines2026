@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCFKRBRJY0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PCFKRBRJY0');
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I love you Lisa</title>
@@ -50,11 +40,11 @@
 
     .text-block {
         background: rgba(255, 192, 203, 0.85);
-        padding: 40px 60px; /* BIGGER */
+        padding: 40px 60px;
         border-radius: 25px;
         text-align: center;
         margin-bottom: 35px;
-        font-size: 1.8rem; /* BIGGER TEXT */
+        font-size: 1.8rem;
         color: #000;
         line-height: 1.4;
     }
@@ -107,8 +97,18 @@
         border: none;
     }
 
+    /* Screen 1 image */
+    .screen1-image {
+        width: 260px;
+        max-width: 80%;
+        margin-bottom: 30px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(255, 182, 193, 0.45);
+    }
+
     /* Screen 3 */
     .screen3 {
+        display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
@@ -118,7 +118,7 @@
     .screen3 .text-container {
         display: flex;
         flex-direction: column;
-        width: 50%; /* BIGGER */
+        width: 50%;
         margin-right: 4%;
     }
 
@@ -137,42 +137,36 @@
 
     .image-container {
         display: flex;
-        gap: 20px;        /* gap between two columns */
-        width: 40%;       /* wider container for two columns */
+        gap: 20px;
+        width: 40%;
         margin-left: auto;
     }
 
     .image-column {
         display: flex;
         flex-direction: column;
-        gap: 15px;       /* vertical spacing */
-        width: 50%;      /* each column takes half the container */
+        gap: 15px;
+        width: 50%;
     }
 
     .image-column img {
-        width: 100%;     /* fill column */
+        width: 100%;
         border-radius: 15px;
     }
 
 </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCFKRBRJY0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PCFKRBRJY0');
-</script>
-
 <body>
 
 <!-- Screen 1 -->
 <div id="screen1" class="screen active" style="background-image: url('background.jpg');">
+    <!-- New Image -->
+    <img src="sushi.jpg" class="screen1-image">
+
     <div class="text-block">
         Lisa. Are you willing to retry and continue our relationship? We can go slow, but first I need to ask: will you be my valentine?
     </div>
+
     <div class="buttons">
         <button class="yes-button" onclick="goToScreen('screen3')">Yes of course</button>
         <button class="no-button" onclick="goToScreen('screen2')">No</button>
@@ -228,4 +222,3 @@
 
 </body>
 </html>
-
